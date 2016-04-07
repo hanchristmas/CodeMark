@@ -21,16 +21,34 @@ class Node {
         this.nextNode = nextNode;  
     }  
 }  
-public class LinkedReverse {  
+public class LinkedListReverse {  
 	
 	//递归实现
-    public static Node reverse(Node head){
+    public static Node reverse1(Node head){
     	if(head==null||head.getNextNode()==null)
     		return head;
-    	Node reHead=reverse(head.getNextNode());
+    	Node reHead=reverse1(head.getNextNode());
     	head.getNextNode().setNextNode(head);
     	head.setNextNode(null);
     	return reHead;
+    }
+    
+    //循环指针移动
+    public static Node reverse2(Node head){
+    	if(head==null)
+    		return null;
+    	Node pre=head;
+    	Node cur=head.getNextNode();
+    	Node next;
+    	while(cur!=null){
+    		next=cur.getNextNode();
+    		cur.setNextNode(pre);
+    		pre=cur;
+    		cur=next;
+    	}
+    	head.setNextNode(null);
+    	head=pre;
+    	return head;
     }
     
     public static void main(String[] args) {  
@@ -54,7 +72,7 @@ public class LinkedReverse {
             h = h.getNextNode();  
         }  
         //调用反转方法  
-        head = reverse(head);  
+        head = reverse2(head);  
         System.out.println("\n**************************");  
         //打印反转后的结果  
         while (null != head) {  
