@@ -1,3 +1,4 @@
+//反转单向链表
 class Node {  
     //变量  
     private int record;  
@@ -33,7 +34,7 @@ public class LinkedListReverse {
     	return reHead;
     }
     
-    //循环指针移动
+    //循环指针移动 Better!
     public static Node reverse2(Node head){
     	if(head==null)
     		return null;
