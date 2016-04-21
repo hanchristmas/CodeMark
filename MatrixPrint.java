@@ -1,3 +1,5 @@
+//矩阵蛇形打印
+
 import java.util.ArrayList;
 public class Solution {
     public ArrayList<Integer> printMatrix(int [][] matrix) {
