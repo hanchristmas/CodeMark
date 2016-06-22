@@ -14,8 +14,8 @@ import java.util.*;
 
 public class Solution {
     public ArrayList<ArrayList<Integer>> resultList=new ArrayList<ArrayList<Integer>>();
+    
 	public ArrayList<ArrayList<Integer>> fourSum(int[] nums,int target){
-
 		Arrays.sort(nums);
 		if(nums.length<4)
             return resultList;
